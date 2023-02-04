@@ -1,0 +1,46 @@
+{
+  "name": "webcompounder",
+  "version": "1.1.6",
+  "description": "A tool to bundle files; and simplify web development - webCompounder (webcompounder.ehan.dev)",
+  "keywords": [
+    "bundle",
+    "bundler",
+    "combine",
+    "compound",
+    "concat",
+    "concatenate",
+    "files",
+    "webCompounder"
+  ],
+  "type": "module",
+  "main": "bin/index.js",
+  "scripts": {
+    "bundle": "webCompounder ./config/bundle.config.json"
+  },
+  "bin": {
+    "webCompounder": "./bin/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EhanAhamed/webCompounder.git"
+  },
+  "author": "Ehan Ahamed and contributors",
+  "license": "UPL-1.0",
+  "bugs": {
+    "url": "https://github.com/EhanAhamed/webCompounder/issues"
+  },
+  "homepage": "https://webcompounder.ehan.dev",
+  "dependencies": {
+    "async": "^3.2.4",
+    "chalk": "^5.0.1",
+    "globby": "^13.1.2",
+    "yargs": "^17.5.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.23.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1",
+    "webcompounder": "^1.1.6"
+  }
+}
