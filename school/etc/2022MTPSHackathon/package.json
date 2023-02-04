@@ -1,0 +1,24 @@
+{
+  "name": "2022-mtps-hackathon-entry",
+  "author": "Ehan Ahamed, Akash Chand, Rishi Sire,",
+  "license": "AFL-3.0",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "prettierCheck": "npx prettier --check .",
+    "prettierWrite": "npx prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EhanAhamed/2022-MTPS-Hackathon-Entry.git"
+  },
+  "bugs": {
+    "url": "https://github.com/EhanAhamed/2022-MTPS-Hackathon-Entry/issues"
+  },
+  "homepage": "https://github.com/EhanAhamed/2022-MTPS-Hackathon-Entry#readme",
+  "devDependencies": {
+    "prettier": "^2.6.2"
+  }
+}

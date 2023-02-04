@@ -1,0 +1,180 @@
+/*
+Font Family Definition
+*/
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("../fonts/SourceSansPro-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("../fonts/SourceSansPro-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("../fonts/SourceSansPro-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("../fonts/SourceSansPro-BoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("../fonts/SourceSansPro-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("../fonts/SourceSansPro-BlackItalic.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+}
+
+/*
+Multi-Use Font Styles
+*/
+.text {
+  font-family: "Source Sans Pro";
+  color: rgb(25, 25, 25);
+}
+.regular {
+  font-weight: normal;
+}
+.bold {
+  font-weight: bold;
+}
+.black {
+  font-weight: 900;
+}
+.normal {
+  font-weight: normal;
+}
+.italic {
+  font-weight: italic;
+}
+
+.content .text.center {
+  text-align: center;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 250%;
+}
+
+.text.black.left {
+  font-family: "Source Sans Pro";
+  font-size: 250%;
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 2.5%;
+}
+.text.regular.left {
+  font-family: "Source Sans Pro";
+  font-size: 125%;
+  margin-top: 2.5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 5%;
+}
+
+.text.black.right {
+  font-family: "Source Sans Pro";
+  font-size: 250%;
+  text-align: right;
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 2.5%;
+}
+.text.regular.right {
+  font-family: "Source Sans Pro";
+  font-size: 125%;
+  text-align: right;
+  margin-top: 2.5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 5%;
+}
+
+.text.black.middle {
+  font-family: "Source Sans Pro";
+  font-size: 250%;
+  text-align: center;
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 2.5%;
+}
+.text.regular.middle {
+  font-family: "Source Sans Pro";
+  font-size: 125%;
+  text-align: center;
+  margin-top: 2.5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 5%;
+}
+.text.regular.footer {
+  font-family: "Source Sans Pro";
+  font-size: 125%;
+  text-align: center;
+  margin-top: 20%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 5%;
+}
+
+.special {
+  color: rgb(100, 25, 25);
+  font-style: italic;
+}
+a {
+  color: rgb(100, 25, 25);
+  font-style: italic;
+  text-decoration: underline rgb(100, 25, 25);
+}
+
+/*
+Browser-Specific and Section-Specific Font Styles
+*/
+@supports (background-clip: text) {
+  .special {
+    background-image: linear-gradient(0deg, rgb(50, 0, 0), rgb(225, 0, 0));
+    background-clip: text;
+    color: transparent;
+    font-style: normal;
+  }
+  a {
+    background-image: linear-gradient(0deg, rgb(50, 0, 0), rgb(225, 0, 0));
+    background-clip: text;
+    color: transparent;
+    font-style: normal;
+    text-decoration: underline rgb(100, 25, 25);
+  }
+}
+@supports ((-webkit-background-clip: text) and (not (background-clip: text))) {
+  .special {
+    background-image: linear-gradient(0deg, rgb(50, 0, 0), rgb(225, 0, 0));
+    -webkit-background-clip: text;
+    color: transparent;
+    font-style: normal;
+  }
+  a {
+    background-image: linear-gradient(0deg, rgb(50, 0, 0), rgb(225, 0, 0));
+    -webkit-background-clip: text;
+    color: transparent;
+    font-style: normal;
+    text-decoration: underline rgb(100, 25, 25);
+  }
+}
