@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Social Studies PBA #3</title>
+    <link rel="stylesheet" href="assets/styles/main.css" />
+  </head>
+  <body>
+    <header id="header">
+      <div class="container">
+        <a
+          class="btn"
+          href="https://github.com/EhanAhamed/2022-Social-Studies-PBA-3"
+        >
+          <img src="./assets/images/githubIcon.svg" alt="" />
+          View Source Code
+        </a>
+        <a
+          class="btn"
+          href="https://github.com/EhanAhamed/2022-Social-Studies-PBA-3/blob/main/assets/docs/research.pdf"
+        >
+          <img src="./assets/images/googleDocsIcon.svg" alt="" />
+          View Research
+        </a>
+      </div>
+      <p>Programmed, Modeled, and Written by Ehan Ahamed</p>
+    </header>
+    <canvas id="viewport"></canvas>
+
+    <script async src="assets/scripts/es-module-shims.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.139.2/build/three.module.js",
+          "three/examples/jsm/loaders/GLTFLoader.js": "https://unpkg.com/three@0.139.2/examples/jsm/loaders/GLTFLoader.js",
+          "three/examples/jsm/controls/FirstPersonControls.js": "https://unpkg.com/three@0.139.2/examples/jsm/controls/FirstPersonControls.js"
+        }
+      }
+    </script>
+    <script type="module" src="assets/scripts/main.js"></script>
+  </body>
+</html>

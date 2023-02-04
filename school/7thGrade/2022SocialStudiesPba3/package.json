@@ -1,0 +1,16 @@
+{
+  "name": "2022-social-studies-pba-3",
+  "author": "Ehan Ahamed",
+  "license": "AFL-3.0",
+  "description": "",
+  "version": "1.0",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "prettierCheck": "npx prettier --check .",
+    "prettierWrite": "npx prettier --write ."
+  },
+  "devDependencies": {
+    "prettier": "^2.6.2"
+  }
+}

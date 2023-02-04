@@ -1,0 +1,83 @@
+name: Source Code Quality
+
+on:
+  push:
+
+jobs:
+  updateDependencies:
+    name: Update & Install Dependencies
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, 'Improved Source Code Quality')"
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.TOKEN }}
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+      - name: Remove Outdated Node Modules & Package Lock
+        run: |
+          rm -f package-lock.json
+          rm -rf node_modules/
+      - name: Update Dependencies
+        run: |
+          npm install --save-dev prettier
+      - name: Install Updated Dependencies
+        run: |
+          npm install
+      - name: Configure Git
+        run: |
+          git config user.name "Ehan A"
+          git config user.email "ehanahame@gmail.com"
+          git remote set-url origin https://EhanAhamed:${{ secrets.TOKEN }}@github.com/EhanAhamed/2022-Social-Studies-PBA-3
+      - name: Commit Changes
+        run: |
+          git add -A
+          git commit -a -m "Improved Source Code Quality" || true
+      - name: Push Commits
+        run: |
+          git push || true
+
+  checkFormatting:
+    name: Check Formatting
+    runs-on: ubuntu-latest
+    needs: updateDependencies
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.TOKEN }}
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+      - name: Run Prettier Formatting Check
+        run: |
+          npm run prettierCheck
+
+  runFormatting:
+    name: Re-Format Files
+    runs-on: ubuntu-latest
+    needs: [updateDependencies, checkFormatting]
+    if: always() && (needs.updateDependencies.result == 'success' && needs.checkFormatting.result == 'failure')
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.TOKEN }}
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+      - name: Run Prettier Formatting
+        run: |
+          npm run prettierWrite
+      - name: Configure Git
+        run: |
+          git config user.name "Ehan A"
+          git config user.email "ehanahame@gmail.com"
+          git remote set-url origin https://EhanAhamed:${{ secrets.TOKEN }}@github.com/EhanAhamed/2022-Social-Studies-PBA-3
+      - name: Commit Changes
+        run: |
+          git commit -a -m "Improved Source Code Quality" || true
+      - name: Push Commits
+        run: |
+          git push || true
